@@ -1,25 +1,8 @@
-import random
-
-a = int(input())
-b = int(input())
-c = int(input())
-d = int(input())
-e = int(input())
-f = int(input())
-g = int(input())
-h = int(input())
-i = int(input())
-
-K = [a,b,c,d,e,f,g,h,i]
-
-
-while True:
-    T = random.sample(K, 7)
-    if sum(T) == 100:
-        T.sort()
-        for Q in T:
-            print(Q)
-        break
-        
-
-
+def count_blood(x):
+    blood_dict = {}
+    for p in x:
+        if blood_dict.get(p):
+            blood_dict[p] += 1
+        else:
+            blood_dict[p] = 1
+    return blood_dict
