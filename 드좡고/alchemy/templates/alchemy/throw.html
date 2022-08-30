@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h1>당신은 무슨 연금술사?</h1>
+  <form action="/alchemy/catch/" method="GET">
+    <label for="throwmessage">message: </label>
+    <input type="text" id="throwmessage" name="message">
+    <input type="submit">
+  </form>
+{% endblock content %}
