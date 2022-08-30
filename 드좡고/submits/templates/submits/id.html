@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<form action="/submits/password/" method="GET">
+    <container>
+        <h1>Select your character</h1>
+        <input type="text" name="id">
+        <input type="submit">
+    </container>    
+</form>
+{% endblock content %}
