@@ -51,6 +51,6 @@ def edit(request, id):
 def update(request, id):
     article = Article.objects.get(id=id)
     article.title = request.POST.get('title')
-    article.title = request.POST.get('content')
+    article.content = request.POST.get('content')
     article.save()
     return redirect('articles:detail', article.id)
