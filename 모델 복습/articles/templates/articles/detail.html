@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>{{article.id}}번째 게시글</h2>
+  <hr>
+  <p>
+    <p>제목 : {{article.title}} </p>
+    <p>내용 : {{article.content}} </p>
+    <p>작성일자 : {{article.created_at}} </p>
+    <p>수정일자 : {{article.updated_at}} </p>
+    <a href="{% url 'articles:index' %}" class="btn btn-primary"> 목록으로 돌아가기 </a>
+    <a href="{% url 'articles:edit' article.id%}" class="btn btn-warning"> 수정 </a>
+    <a href="{% url 'articles:delete' article.id %}" class="btn btn-danger"> delete </a>
+  </p>
+  
+  <form action="{% url 'articles:delete' article.id %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="삭제">
+  </form>
+{% endblock content %}

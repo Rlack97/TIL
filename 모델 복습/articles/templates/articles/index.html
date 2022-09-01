@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>인덱스 페이지입니다.</h1>
+  {% for article in articles %}
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h1><p>{{article.id}}</p></h1>
+      <h5 class="card-title">{{article.title}}</h5>
+      <p class="card-text">{{article.content}}</p>
+      <p>{{article.updated_at}}</p>
+      <p>{{article.created_at}}</p>
+      <a href="{% url 'articles:detail' article.id %}" class="btn btn-secondary">{{article.id}}</a>
+    </div>
+  </div>
+  {% endfor %}
+  <a href="{% url 'articles:new' %}" class="btn btn-secondary"> 새로운 글이 작성되리라 </a>
+{% endblock content %}
+
