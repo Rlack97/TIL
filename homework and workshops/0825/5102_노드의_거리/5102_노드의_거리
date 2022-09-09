@@ -1,0 +1,55 @@
+# 5102_노드의거리 풀이
+# 2022-08-25
+
+import sys
+sys.stdin = open('input.txt','r')
+
+
+# 재귀를 위한 함수설정
+def route_search(H,G):
+    global q, visited
+    if H == G:
+        return q[0][1]
+        # 목적지에 도달하면 해당 노드까지의 거리를 반환
+    else:
+        for k in line[H]:
+            # 해당 노드의 인접노드들
+            if visited[k] == 0:
+                # 방문한 적이 없으면
+                q.append((k,q[0][1]+1))
+                # 해당 노드와, 해당 노드까지의 거리를 큐에 넣고
+                visited[k] = 1
+                # 방문처리
+        q.pop(0)
+        # 작업이 끝난 현 노드 정보를 큐에서 제거
+        if q == [] :
+            return 0
+            # 큐가 비었다면 목적지에 갈 수 없는 것이므로 0 반환
+        return route_search(q[0][0],G)
+        # 다음 노드의 인접노드 리스트에 접근
+
+
+T = int(input())
+for tc in range(1,T+1):
+    V, E = map(int,input().split())
+    line = [[] for _ in range (V+1)]
+    for e in range(E):
+        A, B = map(int,input().split())
+        line[A].append(B)
+        line[B].append(A)
+    S, G = map(int,input().split())
+    # 값 입력
+    q = []
+    # 검사 대기 리스트를 넣을 큐
+    
+    visited = [0]*(V+1)
+    # 방문 리스트 생성
+
+    q.append([S,0])
+    visited[S] = 1
+    # 시작점 설정
+   
+    answer = route_search(S,G)
+    # 함수 작동
+
+    print('#{} {}'.format(tc, answer))

@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda+One&family=Nunito:wght@200;300;400;500;600&display=swap');
+
+/* 스크롤을 부드럽게 설정합니다. */
+html{
+  scroll-behavior: smooth;
+}
+
+/* 기본 글꼴 설정 */
+body {
+  font-family: 'Nunito', sans-serif;
+  /* 창 크기가 줄어도 최소 1280px의 너비를 유지합니다. 
+  디바이스의 화면 크기가 더 작다면 스크롤이 생성됩니다. */
+  min-width: 1280px;
+  color: #333333;
+}
+
+
+.TimesNew {
+  font-family:'Times New Roman', Times, serif; font-style: italic;
+}
+
+.TimesNewB{
+  font-family:'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+.cardbord {
+  border: solid black 1px;
+  border-radius: 0%
+}
+
+
+.hrline {
+  width: 80% ; 
+  border-top: 3px black solid;
+}
+
+
+.photoheight{
+  height: 33%;
+  overflow: hidden;
+}

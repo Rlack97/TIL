@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content%}
+  <h1> 홈!즈 </h1>
+
+  {{ movie }}
+
+  {% for m in movie %}
+    <h3>{{ m }}</h3>
+  {% endfor %}
+
+
+{% endblock content %}

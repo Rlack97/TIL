@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <div class="d-flex justify-content-center">
+    <h1>Chattings</h1>
+  </div>
+  <a href="{% url 'chattings:create' %}">Create</a>
+  <hr>
+  {% for chat in chattings %}
+    <p>글 번호 : {{chat.pk}}</p>
+    <p>작성자 : {{chat.title}}</p>
+    <p>내용 : {{chat.content}}</p>
+    <a href="{% url 'chattings:detail' chat.id%}">[detail]</a><br>
+    <hr>
+  {% endfor %}
+
+{% endblock content %}
+
