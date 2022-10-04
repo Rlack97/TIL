@@ -49,6 +49,10 @@ def nCr(n,r,s):
             comb[r-1] = A[i]    # 
             nCr(c,r-1,i+1)
 
+comb = [0]*r  # 조합을 저장할 리스트
+
+nCr(10,3,0)
+
 비트연산
 
 부분집합 생성
@@ -57,6 +61,6 @@ n = len(arr)
 
 for i in range(1,1<<n)
     for j in range(0,n):
-        if i % (1<<j) : # j번 비트가 0이 아니면 arr[j]가 부분집합의 원소임.
+        if i & (1<<j) : # j번 비트가 0이 아니면 arr[j]가 부분집합의 원소임.
             # 해당 부분집합인 arr[j]에 대해 원하는 작업 수행
     
