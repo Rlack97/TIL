@@ -1,5 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>메인화면</h1>
+    <h1>메인화면</h1>
+
+    {% include 'posts/post.html' %}
+    {% comment %} {{post.content}}
+    <form action="{% url 'posts:delete' post.pk %}">
+        <input type="submit" value="delete" class="btn btn-danger">
+    </form> {% endcomment %}
+
 {% endblock content %}
