@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'posts',
     'bootstrap5',
+    'accounts',
     'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -117,6 +118,7 @@ USE_L10N = True
 
 USE_TZ = False
 
+AUTH_USER_MODEL = 'accounts.User'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/

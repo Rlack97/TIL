@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load bootstrap5 %}
+    <h1>Update</h1>
+    <form action="{% url 'accounts:update' %}" method ="POST">
+        {% csrf_token %}
+        {% bootstrap_form form%}
+        <input type="submit" value="수정" class="btn btn-warning">
+    </form>
+{% endblock content %}

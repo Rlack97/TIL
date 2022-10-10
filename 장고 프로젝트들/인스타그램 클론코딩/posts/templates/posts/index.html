@@ -2,6 +2,19 @@
 
 {% block content %}
     <h1>메인화면</h1>
+    
+    
+    {% if request.user.is_authenticated %}
+        <h2>Hello, {{request.user.username}}</h2>
+        <div class="container d-flex flex-row justify-content">
+            <a href="{% url 'accounts:logout' %}"class="btn btn-secondary">로그아웃</a>
+            <a href="{% url 'accounts:update' %}"class="btn btn-warning">프로필 수정</a>
+            <a href="{% url 'accounts:change_password' %}"class="btn btn-primary">비밀번호 변경</a>
+            <a href="{% url 'accounts:delete' %}" class="btn btn-danger">회원 탈퇴</a>
+        </div>
+    {% else %}
+        <a href="{% url 'accounts:login' %}"class="btn btn-primary">login</a>
+    {% endif %}
 
     {% include 'posts/post.html' %}
     {% comment %} {{post.content}}

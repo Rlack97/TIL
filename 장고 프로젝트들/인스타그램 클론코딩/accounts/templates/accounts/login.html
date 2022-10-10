@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load bootstrap5 %}
+    <h1>Log in</h1>
+
+    <form action="{% url 'accounts:login' %}" method ="POST">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <div class="d-flex justify-content">
+            <input type="submit" value="login" class="btn btn-primary">
+            <a href="{% url 'accounts:signup' %}" class="btn btn-warning">sign up</a>
+        </div>
+    </form>
+
+{% endblock content %}
