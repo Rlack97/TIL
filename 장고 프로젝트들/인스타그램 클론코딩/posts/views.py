@@ -16,7 +16,9 @@ def create(request):
             form = PostForm(request.POST, request.FILES)
             print(request.FILES)
             if form.is_valid():
-                post = form.save()
+                post = form.save(commit=False)
+                post.user = request.user
+                post.save()
                 return redirect('posts:index')
         else:
             form = PostForm()
@@ -33,20 +35,22 @@ def create(request):
 def update(request,pk):
     if request.user.is_authenticated:
         post = Post.objects.get(pk=pk)
-        flag = True
-        if request.method=="POST":
-            form = PostForm(request.POST, instance=post)
-            if form.is_valid():
-                form.save()
-                return redirect('posts:index')
-        else:
-            form = PostForm(instance=post)
-        context = {
-            'form':form,
-            'post':post,
-            'flag':flag
-        }
-        return render(request,'posts/form.html', context)
+        if request.user == post.user:
+            flag = True
+            if request.method=="POST":
+                form = PostForm(request.POST, instance=post)
+                if form.is_valid():
+                    form.save()
+                    return redirect('posts:index')
+            else:
+                form = PostForm(instance=post)
+            context = {
+                'form':form,
+                'post':post,
+                'flag':flag
+            }
+            return render(request,'posts/form.html', context)
+        return redirect('posts:detail', post.pk)
     else:
         return redirect('accounts:login')
 
@@ -54,7 +58,9 @@ def update(request,pk):
 def delete(request,pk):
     if request.user.is_authenticated:
         post = Post.objects.get(pk=pk)
-        post.delete()
-        return redirect('posts:index')
+        if request.user == post.user:
+            post.delete()
+            return redirect('posts:index')
+        return redirect('posts:detail', post.pk)
     else:
         return redirect('accounts:login')

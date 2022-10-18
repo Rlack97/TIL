@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if request.user != person %}
+<h3>{{person.username}} 님의 프로필</h3>
+{% else %}
+<h3>환영합니다! {{person.username}}</h3>
+{% endif %}
+
+{% if profile.image_file %}
+<img src="{{profile.image_file.url}}" alt="P_image">
+{% endif %}
+
+{% if profile.nickname %}
+<p>닉네임 : {{profile.nickname}}</p>
+{% endif %}
+
+{% if profile.introduction %}
+<p>자기소개 : {{profile.introduction}}</p>
+{% endif %}
+
+{% if request.user == person %}
+  <div class="d-flex align-items-baseline">
+    <form action="{% url 'accounts:logout' %}" method="POST" class="m-2" >
+      {% csrf_token %}
+      <input type="submit" value="로그아웃" class="btn btn-warning">
+    </form>
+    <a href="{% url 'accounts:profile_update' %}" class="btn btn-info m-2">프로필 수정</a>
+    <a href="{% url 'accounts:change_password' %}" class="btn btn-primary">비밀번호 변경</a>
+    <form action="{% url 'accounts:delete' %}" method="GET"  class="m-2">
+      {% csrf_token %}
+      <input type="submit" value="회원탈퇴" class="btn btn-danger">
+    </form>
+  </div>
+{% endif %}
+
+<hr>
+
+{% include 'posts/post.html' %}
+
+{% endblock content %}
