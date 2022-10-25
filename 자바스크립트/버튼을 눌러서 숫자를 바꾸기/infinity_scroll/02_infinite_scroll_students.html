@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>lorem</h1>
+
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fuga veniam voluptas perferendis quibusdam libero cupiditate possimus tempore architecto eaque. Perspiciatis obcaecati, beatae voluptatum odio incidunt quod. Expedita, pariatur doloremque!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fuga veniam voluptas perferendis quibusdam libero cupiditate possimus tempore architecto eaque. Perspiciatis obcaecati, beatae voluptatum odio incidunt quod. Expedita, pariatur doloremque!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fuga veniam voluptas perferendis quibusdam libero cupiditate possimus tempore architecto eaque. Perspiciatis obcaecati, beatae voluptatum odio incidunt quod. Expedita, pariatur doloremque!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fuga veniam voluptas perferendis quibusdam libero cupiditate possimus tempore architecto eaque. Perspiciatis obcaecati, beatae voluptatum odio incidunt quod. Expedita, pariatur doloremque!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fuga veniam voluptas perferendis quibusdam libero cupiditate possimus tempore architecto eaque. Perspiciatis obcaecati, beatae voluptatum odio incidunt quod. Expedita, pariatur doloremque!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fuga veniam voluptas perferendis quibusdam libero cupiditate possimus tempore architecto eaque. Perspiciatis obcaecati, beatae voluptatum odio incidunt quod. Expedita, pariatur doloremque!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fuga veniam voluptas perferendis quibusdam libero cupiditate possimus tempore architecto eaque. Perspiciatis obcaecati, beatae voluptatum odio incidunt quod. Expedita, pariatur doloremque!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fuga veniam voluptas perferendis quibusdam libero cupiditate possimus tempore architecto eaque. Perspiciatis obcaecati, beatae voluptatum odio incidunt quod. Expedita, pariatur doloremque!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fuga veniam voluptas perferendis quibusdam libero cupiditate possimus tempore architecto eaque. Perspiciatis obcaecati, beatae voluptatum odio incidunt quod. Expedita, pariatur doloremque!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fuga veniam voluptas perferendis quibusdam libero cupiditate possimus tempore architecto eaque. Perspiciatis obcaecati, beatae voluptatum odio incidunt quod. Expedita, pariatur doloremque!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fuga veniam voluptas perferendis quibusdam libero cupiditate possimus tempore architecto eaque. Perspiciatis obcaecati, beatae voluptatum odio incidunt quod. Expedita, pariatur doloremque!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fuga veniam voluptas perferendis quibusdam libero cupiditate possimus tempore architecto eaque. Perspiciatis obcaecati, beatae voluptatum odio incidunt quod. Expedita, pariatur doloremque!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fuga veniam voluptas perferendis quibusdam libero cupiditate possimus tempore architecto eaque. Perspiciatis obcaecati, beatae voluptatum odio incidunt quod. Expedita, pariatur doloremque!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fuga veniam voluptas perferendis quibusdam libero cupiditate possimus tempore architecto eaque. Perspiciatis obcaecati, beatae voluptatum odio incidunt quod. Expedita, pariatur doloremque!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fuga veniam voluptas perferendis quibusdam libero cupiditate possimus tempore architecto eaque. Perspiciatis obcaecati, beatae voluptatum odio incidunt quod. Expedita, pariatur doloremque!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fuga veniam voluptas perferendis quibusdam libero cupiditate possimus tempore architecto eaque. Perspiciatis obcaecati, beatae voluptatum odio incidunt quod. Expedita, pariatur doloremque!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fuga veniam voluptas perferendis quibusdam libero cupiditate possimus tempore architecto eaque. Perspiciatis obcaecati, beatae voluptatum odio incidunt quod. Expedita, pariatur doloremque!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fuga veniam voluptas perferendis quibusdam libero cupiditate possimus tempore architecto eaque. Perspiciatis obcaecati, beatae voluptatum odio incidunt quod. Expedita, pariatur doloremque!
+
+    </div>
+
+    <script>
+      //scroll
+      // const a = window.innerHeight // 내가 보고 있는 화면 높이;
+      // const b = document.body.scrollHeight // 스크롤을 올릴 수 있는 최댓값
+      // const c = window.scrollY // 내가 있는 위치
+      // c + b = a 형태로 구성.
+
+      function printEvent(e) {
+        if (window.scrollY + window.innerHeight >= document.body.scrollHeight) {
+          const newText = 'eeeeeeeeee \n'
+          const loremDiv = document.querySelector('div')
+          loremDiv.innerText += newText
+        }
+      }
+
+      window.addEventListener('scroll',printEvent)
+    </script>
+  </body>
+</html>

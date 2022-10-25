@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>요일</h3>
+    <ul id="day">
+      <li>월요일</li>
+      <li>화요일</li>
+      <li>수요일</li>
+      <li>목요일</li>
+      <li>금요일</li>
+    </ul>
+
+    <script>
+      const day = document.querySelector('#day')
+
+      // ul태그 맨 앞에 넣기
+
+      const sunday= document.createElement('li')
+      sunday.innerText = '일요일'
+      day.prepend(sunday)
+
+      // ul태그 맨 뒤에 넣기
+      const saturday = document.createElement('li')
+      saturday.innerText = '토요일'
+      day.appendChild(saturday)
+
+      //노드(ul) 앞에 붙이기
+      const startP = document.createElement('p')
+      startP.innerText = '일의 시작'
+      day.before(startP)
+
+      //노드 뒤에 붙이기
+      const endP = document.createElement('p')
+      endP.innerText = '또 한 주가 시작되지...'
+      day.after(endP)
+
+      //지우기
+      // const delSunday = day.children[0]
+      // delSunday.remove()
+
+      // 맨 뒤로 보내기
+      const moveSun = day.firstChild
+      day.appendChild(moveSun)
+
+
+    </script>
+  </body>
+</html>

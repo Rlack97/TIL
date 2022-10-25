@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        margin-left: 5px;
+        margin-top: 15px;
+      }
+
+      .red {
+        background-color: #dc143c;
+      }
+
+      .blue {
+        background-color: #5f9ea0;
+      }
+
+      .green {
+        background-color: #99cd32;
+      }
+    
+    </style>
+  </head>
+  <body>
+    <div id=number>0</div>
+    <button id="minus">-</button>
+    <button id="plus">+</button>
+
+    <div>
+      <p class="current-color">black</p>
+      <div class="red box"></div>
+      <div class="blue box"></div>
+      <div class="green box"></div>
+    </div>
+
+    <script>
+      // 코드 작성
+      let number =document.querySelector('#number')
+      // 값이 계속 조정되어야 하기 때문에 let을 사용해야 함
+      const plusBtn = document.querySelector('#plus')
+      const minusBtn = document.querySelector('#minus')
+
+      const up = function(event) {
+        // number.innerText = parseInt(number.innerText) + 1
+        // 가져온 값을 숫자값으로 변경 후 처리
+        number.innerText++
+      }
+
+      const down = function(event) {
+        // number.innerText = parseInt(number.innerText) -= 1
+        number.innerText--
+      }
+
+      plusBtn.addEventListener('click',up)
+      minusBtn.addEventListener('click',down)
+
+      
+      changeColor = function(color) {
+        const currentColor = document.querySelector('.current-color')
+        currentColor.innerText = color
+        currentColor.style.color = color
+      }
+
+      document.querySelector('.red')
+        .addEventListener ('mouseover', function() {
+          number.style.color = '#dc143c'
+          changeColor('crimson')
+        })
+
+      document.querySelector('.blue')
+      .addEventListener ('mouseover', function() {
+        number.style.color = '#5f9ea0'
+        changeColor('blue')
+      })
+
+      document.querySelector('.green')
+        .addEventListener ('mouseover', function() {
+          number.style.color = '#9acd32'
+          changeColor('green')
+        })
+      
+    </script>
+  </body>
+</html>
