@@ -1,0 +1,28 @@
+v-on
+v-bind
+v-....
+차이점과 특징들
+
+emit 뜻
+
+router에 데이터 전달할 떄 {{}} 쓰지말것 ="" 형태
+
+SPA란?
+single page application
+
+CSR
+Client Side rendering
+SSR 
+server side rendering
+
+
+npm run serve
+
+computed 와 method의 차이?
+
+emit 이벤트가 발생해야 정보를 보낼 수 있다.
+
+vue에서 this를 통해 data 등의 속성값에 접근할 수 있음
+
+@= v-on
+: = v-bind
