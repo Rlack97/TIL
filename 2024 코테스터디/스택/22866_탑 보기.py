@@ -50,7 +50,7 @@ height = list(map(int,input().split()))
 building_count = [0] * N
 near_building = [1e9] * N
 
-# 왼쪽 -> 오른쪽으로 탐색하면서 현재 빌딩보다 큰 빌딩을 담는다
+# 탑의  왼쪽 / 탑의 오른쪽을 각각 탐색하면서 현재 빌딩보다 큰 빌딩을 담는다
 left_stack = [] 
 for i, h in enumerate(height):
   #자기 자신보다 낮은 빌딩 전부 제거 
